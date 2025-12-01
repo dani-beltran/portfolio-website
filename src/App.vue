@@ -22,7 +22,7 @@ import FooterSection from './components/FooterSection.vue';
 }
 
 .container {
-  max-width: 720px;
+  max-width: 860px;
   margin: 0 auto;
   padding: 4rem 1.5rem;
   flex: 1;
