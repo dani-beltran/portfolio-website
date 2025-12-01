@@ -1,15 +1,12 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import profileImage from '../assets/profile.jpeg'
 
 const imageVisible = ref(false)
 
-onMounted(() => {
-  // Small delay to ensure the animation is visible
-  setTimeout(() => {
-    imageVisible.value = true
-  }, 100)
-})
+function onImageLoad() {
+  imageVisible.value = true
+}
 </script>
 
 <template>
@@ -19,6 +16,7 @@ onMounted(() => {
         :src="profileImage" 
         alt="Daniel J. L. Beltran" 
         class="profile-image"
+        @load="onImageLoad"
       />
     </div>
     <div class="profile-content">
