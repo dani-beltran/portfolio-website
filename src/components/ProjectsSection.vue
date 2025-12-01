@@ -62,6 +62,7 @@ function onImageLoad(projectName) {
 <style scoped>
 .projects {
   margin-bottom: 3rem;
+  position: relative;
 }
 
 .section-title {
@@ -76,7 +77,9 @@ function onImageLoad(projectName) {
   color: var(--color-text-muted);
   font-size: 0.9375rem;
   text-align: center;
-  padding: 2rem 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .projects-grid {
