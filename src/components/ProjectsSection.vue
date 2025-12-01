@@ -28,6 +28,7 @@ function onImageLoad(projectName) {
 <template>
   <section class="projects">
     <h2 class="section-title">Projects</h2>
+    <p v-if="loadedImages.size === 0" class="loading-message">Loading projects...</p>
     <div class="projects-grid">
       <a 
         v-for="project in projects" 
@@ -69,6 +70,13 @@ function onImageLoad(projectName) {
   margin-bottom: 1.5rem;
   color: var(--color-text);
   letter-spacing: -0.01em;
+}
+
+.loading-message {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  text-align: center;
+  padding: 2rem 0;
 }
 
 .projects-grid {
