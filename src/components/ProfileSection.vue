@@ -1,10 +1,20 @@
 <script setup>
+import { ref, onMounted } from 'vue'
 import profileImage from '../assets/profile.jpeg'
+
+const imageVisible = ref(false)
+
+onMounted(() => {
+  // Small delay to ensure the animation is visible
+  setTimeout(() => {
+    imageVisible.value = true
+  }, 100)
+})
 </script>
 
 <template>
   <section class="profile">
-    <div class="profile-image-container">
+    <div class="profile-image-container" :class="{ 'slide-down': imageVisible }">
       <img 
         :src="profileImage" 
         alt="Daniel J. L. Beltran" 
@@ -33,6 +43,14 @@ import profileImage from '../assets/profile.jpeg'
 
 .profile-image-container {
   margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.profile-image-container.slide-down {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .profile-image {
