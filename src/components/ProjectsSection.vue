@@ -1,5 +1,6 @@
 <script setup>
 import deckuImage from '../assets/screenshot-deckudb.png'
+import layerzImage from '../assets/screenshot-layerz.png'
 
 const projects = [
   {
@@ -7,6 +8,12 @@ const projects = [
     description: 'A comprehensive database for Steam Deck game compatibility, helping gamers find the best experiences for their portable gaming device.',
     image: deckuImage,
     link: 'https://deckudb.com'
+  },
+  {
+    name: 'LayerZ',
+    description: 'A SaaS platform that empower your e-commerce business with advanced AI-driven tools to optimize sales and customer engagement.',
+    image: layerzImage,
+    link: 'https://layerz.com'
   }
 ]
 </script>
@@ -57,6 +64,7 @@ const projects = [
 
 .projects-grid {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
@@ -113,6 +121,10 @@ const projects = [
 }
 
 @media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .project-content {
     padding: 1rem;
   }
