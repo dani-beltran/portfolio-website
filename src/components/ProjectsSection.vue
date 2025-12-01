@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue'
 import deckuImage from '../assets/screenshot-deckudb.png'
 import layerzImage from '../assets/screenshot-layerz.png'
 
@@ -16,6 +17,12 @@ const projects = [
     link: 'https://layerz.com'
   }
 ]
+
+const loadedImages = ref(new Set())
+
+function onImageLoad(projectName) {
+  loadedImages.value.add(projectName)
+}
 </script>
 
 <template>
@@ -29,12 +36,14 @@ const projects = [
         target="_blank"
         rel="noopener noreferrer"
         class="project-card"
+        :class="{ 'is-loaded': loadedImages.has(project.name) }"
       >
         <div class="project-image-container">
           <img 
             :src="project.image" 
             :alt="project.name"
             class="project-image"
+            @load="onImageLoad(project.name)"
           />
         </div>
         <div class="project-content">
@@ -76,6 +85,30 @@ const projects = [
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   color: inherit;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.project-card.is-loaded {
+  animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .project-card:hover {
@@ -124,7 +157,7 @@ const projects = [
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .project-content {
     padding: 1rem;
   }
