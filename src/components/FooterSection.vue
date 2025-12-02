@@ -134,17 +134,17 @@ const currentYear = new Date().getFullYear()
   }
   
   .social-links {
-    gap: 12px;
+    gap: 20px;
   }
   
   .social-link {
-    width: 36px;
-    height: 36px;
+    width: 48px;
+    height: 48px;
   }
   
   .social-link svg {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
   }
   
   .disclaimer-info {
@@ -154,17 +154,17 @@ const currentYear = new Date().getFullYear()
 
 @media (max-width: 480px) {
   .social-links {
-    gap: 8px;
+    gap: 16px;
   }
   
   .social-link {
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
   }
   
   .social-link svg {
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
   }
 }
 </style>
