@@ -14,7 +14,7 @@ const projects = [
     name: 'LayerZ',
     description: 'A SaaS platform that empower your e-commerce business with advanced AI-driven tools to optimize sales and customer engagement.',
     image: layerzImage,
-    link: 'https://layerz.com'
+    link: 'https://dashboard.layerz.com/sign-up'
   }
 ]
 
