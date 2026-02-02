@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import deckuImage from '../assets/screenshot-deckudb.png'
 import layerzImage from '../assets/screenshot-layerz.png'
+import nodescriptImage from '../assets/screenshot-nodescript.jpg'
 
 const projects = [
   {
@@ -15,6 +16,12 @@ const projects = [
     description: 'A SaaS platform that empower your e-commerce business with advanced AI-driven tools to optimize sales and customer engagement.',
     image: layerzImage,
     link: 'https://dashboard.layerz.com/sign-up'
+  },
+  {
+    name: 'NodeScript',
+    description: 'No-code platform for data pipelines and automation, enabling users to create complex workflows without writing code.',
+    image: nodescriptImage,
+    link: 'https://nodescript.dev'
   }
 ]
 
