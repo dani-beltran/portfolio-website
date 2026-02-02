@@ -23,11 +23,8 @@ function onImageLoad() {
       <h1 class="name">Daniel J. L. Beltran</h1>
       <p class="title">Software Engineer</p>
       <p class="description">
-        Experienced Full Stack Engineer and Tech Lead with a strong background in building scalable web
-applications, multi-tenant SaaS platforms, real-time data pipelines and driving product development in
-fast-paced environments. Passionate about product design, UX, clean code, efficient architectures, and
-mentoring teams to deliver high-quality user-centric solutions. Skilled in JavaScript/TypeScript, Node.js,
-React, Vue, cloud infrastructure, and big data technologies.
+        Passionate developer with over 10 years of experience crafting web applications. 
+        Specialized in building scalable, user-centric solutions from concept to deployment.
       </p>
     </div>
   </section>
