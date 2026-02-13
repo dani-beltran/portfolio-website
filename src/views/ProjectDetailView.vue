@@ -1,35 +1,17 @@
 <script setup>
-import { computed, ref, onMounted, onUnmounted } from 'vue'
+import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { getProjectById } from '../data/projects'
+import MagnifiableImage from '../components/MagnifiableImage.vue'
 
 const route = useRoute()
 const router = useRouter()
 
 const project = computed(() => getProjectById(route.params.id))
-const showFullscreen = ref(false)
 
 function goBack() {
   router.push('/')
 }
-
-function toggleFullscreen() {
-  showFullscreen.value = !showFullscreen.value
-}
-
-function handleEscKey(event) {
-  if (event.key === 'Escape') {
-    showFullscreen.value = false
-  }
-}
-
-onMounted(() => {
-  window.addEventListener('keydown', handleEscKey)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('keydown', handleEscKey)
-})
 </script>
 
 <template>
@@ -47,16 +29,11 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <div class="project-image-large" @click="toggleFullscreen">
-      <img :src="project.gif || project.image" :alt="project.name" />
-    </div>
-
-    <!-- Fullscreen Image Modal -->
-    <Transition name="fullscreen">
-      <div v-if="showFullscreen" class="fullscreen-overlay" @click="toggleFullscreen">
-        <img :src="project.gif || project.image" :alt="project.name" class="fullscreen-image" />
-      </div>
-    </Transition>
+    <MagnifiableImage 
+      :src="project.gif || project.image" 
+      :alt="project.name" 
+      class="project-image"
+    />
 
     <div class="project-body">
       <section class="project-section">
@@ -165,25 +142,8 @@ export default {
   font-weight: 500;
 }
 
-.project-image-large {
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
+.project-image {
   margin-bottom: 3rem;
-  border: 1px solid var(--color-border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  cursor: zoom-in;
-  transition: transform 0.2s ease;
-}
-
-.project-image-large:hover {
-  transform: scale(1.01);
-}
-
-.project-image-large img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 .project-body {
@@ -265,49 +225,6 @@ export default {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: var(--color-text);
-}
-
-.fullscreen-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  cursor: zoom-out;
-  padding: 2rem;
-}
-
-.fullscreen-image {
-  max-width: 95%;
-  max-height: 95%;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-}
-
-.fullscreen-enter-active,
-.fullscreen-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.fullscreen-enter-from,
-.fullscreen-leave-to {
-  opacity: 0;
-}
-
-.fullscreen-enter-active .fullscreen-image,
-.fullscreen-leave-active .fullscreen-image {
-  transition: transform 0.3s ease;
-}
-
-.fullscreen-enter-from .fullscreen-image,
-.fullscreen-leave-to .fullscreen-image {
-  transform: scale(0.9);
 }
 
 @media (max-width: 640px) {
