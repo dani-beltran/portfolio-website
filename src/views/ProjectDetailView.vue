@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { getProjectById } from '../data/projects'
 
@@ -16,6 +16,20 @@ function goBack() {
 function toggleFullscreen() {
   showFullscreen.value = !showFullscreen.value
 }
+
+function handleEscKey(event) {
+  if (event.key === 'Escape') {
+    showFullscreen.value = false
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleEscKey)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleEscKey)
+})
 </script>
 
 <template>
