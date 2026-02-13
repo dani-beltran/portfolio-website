@@ -1,29 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import deckuImage from '../assets/screenshot-deckudb.png'
-import layerzImage from '../assets/screenshot-layerz.png'
-import nodescriptImage from '../assets/screenshot-nodescript.jpg'
-
-const projects = [
-  {
-    name: 'DeckuDB',
-    description: 'A comprehensive database for Steam Deck game compatibility, helping gamers find the best experiences for their portable gaming device.',
-    image: deckuImage,
-    link: 'https://deckudb.com'
-  },
-  {
-    name: 'LayerZ',
-    description: 'A SaaS platform that empower your e-commerce business with advanced AI-driven tools to optimize sales and customer engagement.',
-    image: layerzImage,
-    link: 'https://dashboard.layerz.com/sign-up'
-  },
-  {
-    name: 'NodeScript',
-    description: 'No-code platform for data pipelines and automation, enabling users to create complex workflows without writing code.',
-    image: nodescriptImage,
-    link: 'https://nodescript.dev'
-  }
-]
+import { projects } from '../data/projects'
 
 const loadedImages = ref(new Set())
 
@@ -37,12 +14,10 @@ function onImageLoad(projectName) {
     <h2 class="section-title">Projects</h2>
     <p v-if="loadedImages.size === 0" class="loading-message">Loading projects...</p>
     <div class="projects-grid">
-      <a 
+      <RouterLink 
         v-for="project in projects" 
         :key="project.name"
-        :href="project.link"
-        target="_blank"
-        rel="noopener noreferrer"
+        :to="{ name: 'project', params: { id: project.id } }"
         class="project-card"
         :class="{ 'is-loaded': loadedImages.has(project.name) }"
       >
@@ -56,12 +31,12 @@ function onImageLoad(projectName) {
         </div>
         <div class="project-content">
           <h3 class="project-name">{{ project.name }}</h3>
-          <p class="project-description">{{ project.description }}</p>
+          <p class="project-description">{{ project.shortDescription }}</p>
           <span class="project-link">
-            Visit site →
+            Read more →
           </span>
         </div>
-      </a>
+      </RouterLink>
     </div>
   </section>
 </template>

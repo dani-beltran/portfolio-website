@@ -1,14 +1,16 @@
 <script setup>
-import ProfileSection from './components/ProfileSection.vue'
-import ProjectsSection from './components/ProjectsSection.vue'
-import FooterSection from './components/FooterSection.vue';
+import { useRoute } from 'vue-router'
+import FooterSection from './components/FooterSection.vue'
+import { computed } from 'vue'
+
+const route = useRoute()
+const isDetailPage = computed(() => route.name === 'project')
 </script>
 
 <template>
   <div class="app">
-    <main class="container">
-      <ProfileSection />
-      <ProjectsSection />
+    <main class="container" :class="{ 'detail-page': isDetailPage }">
+      <RouterView />
     </main>
     <FooterSection />
   </div>
