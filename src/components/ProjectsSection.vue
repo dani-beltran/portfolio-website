@@ -31,6 +31,7 @@ function onImageLoad(projectName) {
         </div>
         <div class="project-content">
           <h3 class="project-name">{{ project.name }}</h3>
+          <p class="project-date">{{ project.dateRange }}</p>
           <p class="project-description">{{ project.shortDescription }}</p>
           <span class="project-link">
             Read more →
@@ -129,8 +130,15 @@ function onImageLoad(projectName) {
 .project-name {
   font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   letter-spacing: -0.01em;
+}
+
+.project-date {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .project-description {
