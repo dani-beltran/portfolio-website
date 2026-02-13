@@ -2,6 +2,8 @@ import deckuImage from '../assets/screenshot-deckudb.png'
 import layerzImage from '../assets/screenshot-layerz.png'
 import nodescriptImage from '../assets/screenshot-nodescript.jpg'
 import deckuGif from '../assets/deckudb-demo.gif'
+import nodescriptGif from '../assets/nodescript-demo.gif'
+import layerzGif from '../assets/layerz-demo.gif'
 
 export const projects = [
   {
@@ -65,6 +67,7 @@ Technical highlights include:
 - Continuous integration and deployment with GitHub Actions
 - Webhook support for external integrations`,
     image: layerzImage,
+    gif: layerzGif,
     externalLink: 'https://dashboard.layerz.com/sign-up',
     technologies: ['Vue.js', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Shadcn UI', 'Tailwind CSS', 'Docker']
   },
@@ -97,6 +100,7 @@ Key technical implementations:
 - Advanced rate limiting and DDoS protection
 - Credit system for managing workflow execution costs`,
     image: nodescriptImage,
+    gif: nodescriptGif,
     externalLink: 'https://nodescript.dev',
     technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MongoDB', 'Canvas API', 'Prometheus', 'Grafana', 'Kubernetes']
   }
