@@ -34,7 +34,7 @@ function onImageLoad(projectName) {
           <p class="project-date">{{ project.dateRange }}</p>
           <p class="project-description">{{ project.shortDescription }}</p>
           <span class="project-link">
-            Read more →
+            See more →
           </span>
         </div>
       </RouterLink>
