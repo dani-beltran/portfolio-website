@@ -1,9 +1,12 @@
 import deckuImage from '../assets/screenshot-deckudb.png'
-import layerzImage from '../assets/screenshot-layerz.png'
 import nodescriptImage from '../assets/screenshot-nodescript.jpg'
 import deckuGif from '../assets/deckudb-demo.gif'
 import nodescriptGif from '../assets/nodescript-demo.gif'
 import layerzGif from '../assets/layerz-demo.gif'
+import layerzImage2 from '../assets/screenshot-layerz-2.png'
+import layerzProductGif from '../assets/layerz-product-demo.gif'
+import nodescriptImage2 from '../assets/screenshot-nodescript-2.png'
+
 
 export const ProjectType = {
   Work: 'Work',
@@ -39,8 +42,15 @@ Key technical features include:
 - Data lazy loading for performance
 - SEO-friendly routing and meta tags
 - Comprehensive error handling and logging`,
-    image: deckuImage,
-    gif: deckuGif,
+    images: [{
+      url: deckuImage,
+      alt: 'DeckuDB screenshot',
+      displayDuration: 2_000
+    }, {
+      url: deckuGif,
+      alt: 'DeckuDB demo GIF',
+      displayDuration: 48_000
+    }],
     externalLink: 'https://deckudb.com',
     technologies: ['Vue.js', 'TypeScript', 'JavaScript', 'Node.js', 'MongoDB', 'Express', 'Docker', 'Vite', 'LLM APIs']
   },
@@ -76,8 +86,20 @@ Technical highlights include:
 - Automated testing with Playwright and Vitest
 - Continuous integration and deployment with GitHub Actions
 - Webhook support for external integrations`,
-    image: layerzImage,
-    gif: layerzGif,
+    images: [{
+      url: layerzImage2,
+      alt: 'LayerZ concept image',
+      displayDuration: 2_000
+    }, {
+      url: layerzProductGif,
+      alt: 'LayerZ concept demo GIF',
+      displayDuration: 45_000
+    },
+    {
+      url: layerzGif,
+      alt: 'LayerZ dashboard demo GIF',
+      displayDuration: 4 * 60_000
+    }],
     externalLink: 'https://layerz.com/',
     technologies: ['Vue.js', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Shadcn UI', 'Tailwind CSS', 'Docker']
   },
@@ -111,8 +133,19 @@ Key technical implementations:
 - Sandboxed execution environment for security
 - Advanced rate limiting and DDoS protection
 - Credit system for managing workflow execution costs`,
-    image: nodescriptImage,
-    gif: nodescriptGif,
+    images: [{
+      url: nodescriptImage2,
+      alt: 'NodeScript website screenshot',
+      displayDuration: 3_000
+    },{
+      url: nodescriptImage,
+      alt: 'NodeScript no code workflow editor screenshot',
+      displayDuration: 5_000
+    }, {
+      url: nodescriptGif,
+      alt: 'NodeScript demo GIF',
+      displayDuration: 94_000
+    }],
     externalLink: 'https://nodescript.dev',
     technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MongoDB', 'Canvas API', 'Prometheus', 'Grafana', 'Kubernetes']
   }

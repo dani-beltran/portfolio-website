@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { getProjectById } from '../data/projects'
-import MagnifiableImage from '../components/MagnifiableImage.vue'
+import MagnifiableImageGallery from '../components/MagnifiableImageGallery.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -31,8 +31,8 @@ function goBack() {
       </div>
     </div>
 
-    <MagnifiableImage 
-      :src="project.gif || project.image" 
+    <MagnifiableImageGallery
+      :images="project.images" 
       :alt="project.name" 
       class="project-image"
     />

@@ -40,7 +40,7 @@ function onImageLoad(projectName) {
       >
         <div class="project-image-container">
           <img 
-            :src="project.image" 
+            :src="project.images[0].url" 
             :alt="project.name"
             class="project-image"
             @load="onImageLoad(project.name)"
