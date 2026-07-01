@@ -21,7 +21,9 @@ function goBack() {
     </button>
 
     <div class="project-header">
-      <h1 class="project-title">{{ project.name }}</h1>
+      <h1 class="project-title">
+        <a :href="project.externalLink" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
+      </h1>
       <div class="technologies">
         <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
           {{ tech }}
@@ -123,6 +125,16 @@ export default {
   letter-spacing: -0.02em;
   color: var(--color-text);
   line-height: 1.2;
+}
+
+.project-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-title a:hover {
+  text-decoration: underline;
+  color: var(--color-accent);
 }
 
 .technologies {

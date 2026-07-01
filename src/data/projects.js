@@ -5,10 +5,17 @@ import deckuGif from '../assets/deckudb-demo.gif'
 import nodescriptGif from '../assets/nodescript-demo.gif'
 import layerzGif from '../assets/layerz-demo.gif'
 
+export const ProjectType = {
+  Work: 'Work',
+  Personal: 'Personal',
+  OpenSource: 'Open Source'
+}
+
 export const projects = [
   {
     id: 'deckudb',
     name: 'DeckuDB',
+    type: ProjectType.Personal,
     dateRange: 'Oct 2025 - Present',
     shortDescription: 'A comprehensive database for Steam Deck game compatibility, helping gamers find the best experiences for their portable gaming device.',
     description: `DeckuDB is a comprehensive database aggregating community reports on Steam Deck game compatibility. The project emerged from the need for centralized, accurate, community-driven information about which games work best on Valve's handheld gaming device.
@@ -40,6 +47,7 @@ Key technical features include:
   {
     id: 'layerz',
     name: 'LayerZ',
+    type: ProjectType.Work,
     dateRange: 'Nov 2024 - Present',
     shortDescription: 'A SaaS platform that empower your e-commerce business with advanced AI-driven tools to optimize sales and customer engagement.',
     description: `LayerZ is a cutting-edge SaaS platform designed to revolutionize e-commerce operations through artificial intelligence and advanced analytics. The platform serves as a comprehensive solution for online businesses looking to optimize their sales processes, understand customer behavior, and increase conversion rates.
@@ -70,12 +78,13 @@ Technical highlights include:
 - Webhook support for external integrations`,
     image: layerzImage,
     gif: layerzGif,
-    externalLink: 'https://dashboard.layerz.com/sign-up',
+    externalLink: 'https://layerz.com/',
     technologies: ['Vue.js', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Shadcn UI', 'Tailwind CSS', 'Docker']
   },
   {
     id: 'nodescript',
     name: 'NodeScript',
+    type: ProjectType.Work,
     dateRange: 'May 2023 - Nov 2024',
     shortDescription: 'No-code platform for data pipelines and automation, enabling users to create complex workflows without writing code.',
     description: `NodeScript is an innovative no-code platform that democratizes data pipeline creation and workflow automation. The platform enables business analysts, product managers, and operations teams to build sophisticated data workflows without writing a single line of code.

@@ -1,8 +1,24 @@
 <script setup>
-import { ref } from 'vue'
-import { projects } from '../data/projects'
+import { ref, computed } from 'vue'
 
 const loadedImages = ref(new Set())
+
+const props = defineProps({
+  title: {
+    type: String,
+    required: false,
+    default: () => 'Projects'
+  },
+  description: {
+    type: String,
+    required: false
+  },
+  projects: {
+    type: Array,
+    required: false,
+    default: () => []
+  }
+})
 
 function onImageLoad(projectName) {
   loadedImages.value.add(projectName)
@@ -11,7 +27,8 @@ function onImageLoad(projectName) {
 
 <template>
   <section class="projects">
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">{{ title }}</h2>
+    <h3 v-if="description" class="section-description">{{ description }}</h3>
     <p v-if="loadedImages.size === 0" class="loading-message">Loading projects...</p>
     <div class="projects-grid">
       <RouterLink 
@@ -51,9 +68,15 @@ function onImageLoad(projectName) {
 .section-title {
   font-size: 1.25rem;
   font-weight: 500;
-  margin-bottom: 1.5rem;
   color: var(--color-text);
   letter-spacing: -0.01em;
+}
+
+.section-description {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
 }
 
 .loading-message {
