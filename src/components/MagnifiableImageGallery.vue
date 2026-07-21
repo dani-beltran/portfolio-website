@@ -216,7 +216,8 @@ onUnmounted(() => {
 }
 
 .fullscreen-content {
-  width: min(100%, 1200px);
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -224,13 +225,19 @@ onUnmounted(() => {
 }
 
 .fullscreen-img-container {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: zoom-out;
   transition: transform 0.2s ease;
 }
 
 .fullscreen-image {
-  max-width: 95vw;
-  max-height: calc(100vh - 160px);
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
