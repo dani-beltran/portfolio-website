@@ -1,4 +1,6 @@
 <script setup>
+import { nextTick, onMounted, ref, watch } from 'vue';
+
 const props = defineProps({
   images: {
     type: Array,
@@ -16,9 +18,34 @@ const props = defineProps({
 
 const emit = defineEmits(['previous', 'next', 'select']);
 
+const thumbnailStripRef = ref(null);
+
 function handleSelect(index) {
   emit('select', index);
 }
+
+async function scrollActiveThumbnailIntoView() {
+  await nextTick();
+
+  if (!props.thumbnails || !thumbnailStripRef.value) {
+    return;
+  }
+
+  const activeThumbnail = thumbnailStripRef.value.querySelector('.thumbnail-button.active');
+  if (!activeThumbnail) {
+    return;
+  }
+
+  activeThumbnail.scrollIntoView({
+    behavior: 'smooth',
+    block: 'nearest',
+    inline: 'nearest',
+  });
+}
+
+watch(() => props.currentIndex, scrollActiveThumbnailIntoView);
+
+onMounted(scrollActiveThumbnailIntoView);
 </script>
 
 <template>
@@ -29,7 +56,7 @@ function handleSelect(index) {
       <button class="gallery-button" type="button" @click="emit('next')">Next</button>
     </div>
 
-    <div v-if="props.thumbnails" class="thumbnail-strip">
+    <div v-if="props.thumbnails" ref="thumbnailStripRef" class="thumbnail-strip">
       <button
         v-for="(image, index) in props.images"
         :key="image.url || index"
