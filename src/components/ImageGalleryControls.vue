@@ -146,4 +146,10 @@ onMounted(scrollActiveThumbnailIntoView);
   border-color: var(--color-primary, #2563eb);
   opacity: 1;
 }
+
+@media (max-width: 640px) {
+  .thumbnail-strip {
+    justify-content: flex-start;
+  }
+}
 </style>
