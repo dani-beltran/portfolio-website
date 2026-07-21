@@ -6,6 +6,11 @@ import layerzGif from '../assets/layerz-demo.gif'
 import layerzImage2 from '../assets/screenshot-layerz-2.png'
 import layerzProductGif from '../assets/layerz-product-demo.gif'
 import nodescriptImage2 from '../assets/screenshot-nodescript-2.png'
+import kws1 from '../assets/kws1.avif'
+import kws0 from '../assets/kws0.webp'
+import kws2 from '../assets/kws2.webp'
+import kws3 from '../assets/kws3.webp'
+import kws4 from '../assets/kws4.webp'
 
 
 export const ProjectType = {
@@ -71,7 +76,8 @@ LayerZ integrates seamlessly with any e-commerce platform, making it easy for bu
 
 **Backend** Restful API with Node.js, TypeScript and Express. The backend handles all business logic, data processing, and AI interactions. It integrates with various third-party services for email marketing, CRM, and analytics.
 
-**AI** The AI-powered coding engine helps businesses personalize marketing campaigns without needing technical expertise. It uses Claude 4.5 Sonnet for natural language processing and code generation, allowing users to create custom HTML banners for customer engagement and sales optimization.
+**AI** The AI-powered coding engine helps businesses personalize marketing campaigns without needing technical expertise. It uses Claude 4.5 Sonnet for natural language processing and code generation, allowing users to create custom HTML banners for customer engagement and sales optimization. 
+The AI sales agent leverages LangChain, LangGraph, MCP, and RAG to provide multi-step reasoning and decision-making capabilities, enabling businesses to automate complex sales processes and customer interactions.
 
 **Database** MongoDB for flexible document storage, perfect at early stages where changes are frequent. Indexes are strategically placed for optimal query performance.
 
@@ -79,9 +85,12 @@ LayerZ integrates seamlessly with any e-commerce platform, making it easy for bu
 
 **Security** Implementation of OAuth 2.0 for authentication, role-based access control, and encryption of sensitive data both in transit and at rest. GDPR compliance measures are built into the platform.
 
-Technical highlights include:
+Key technical contributions include:
+- oAuth2-based SSO and RBAC for multi-tenant SaaS 
 - Real-time analytics using Imply Polaris (Apache Druid)
 - Advanced rate limiting and DDoS protection
+- Multi-step AI agents leveraging LangChain, LangGraph, MCP and RAG.
+- IaC with Terraform for infrastructure management on AWS
 - Comprehensive logging and monitoring
 - Automated testing with Playwright and Vitest
 - Continuous integration and deployment with GitHub Actions
@@ -101,7 +110,7 @@ Technical highlights include:
       displayDuration: 4 * 60_000
     }],
     externalLink: 'https://layerz.com/',
-    technologies: ['Vue.js', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Shadcn UI', 'Tailwind CSS', 'Docker']
+    technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MongoDB', 'Nuxt.js', 'Tailwind CSS', 'Docker']
   },
   {
     id: 'nodescript',
@@ -126,7 +135,7 @@ Users can schedule workflows to run automatically, set up triggers based on even
 
 **Monitoring** Prometheus and Grafana for real-time monitoring of workflow execution metrics, system performance, and resource utilization.
 
-Key technical implementations:
+Key technical contributions include:
 - Plugin architecture for extensible data connectors
 - Version control system for workflow definitions
 - Real-time collaboration features using operational transform
@@ -148,7 +157,56 @@ Key technical implementations:
     }],
     externalLink: 'https://nodescript.dev',
     technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MongoDB', 'Canvas API', 'Prometheus', 'Grafana', 'Kubernetes']
-  }
+  },
+  {
+    id: 'kws',
+    name: 'Kids Web Services (KWS)',
+    type: ProjectType.Work,
+    dateRange: 'Mar 2016 - Apr 2017',
+    shortDescription: 'The leading platform for kids’ digital safety and parental consent management, used by major gaming and entertainment companies.',
+    description: `Kids Web Services (KWS) is a developer-facing platform that provides the tools necessary to build compliant and safe digital experiences for younger audiences. It is used by some of the largest names in gaming and entertainment to manage parental consent, age verification, and data privacy in accordance with global regulations like COPPA and GDPR-K.
+
+The platform streamlines the process of verifying a parent's identity and obtaining their permission for children to access various online features. By providing a unified, secure, and compliant solution, KWS enables developers to focus on creating engaging content while ensuring the safety and privacy of their youngest users.`,
+    implementation: `Working on KWS involved maintaining and scaling a mission-critical platform with high availability and strict security requirements:
+
+**Frontend** Built with Angular.js and JavaScript, focusing on a robust and maintainable dashboard for developers and a seamless, localized experience for parents during the consent flow.
+
+**Backend** Powered by Node.js, express.js and JavaScript, handling complex workflows for age verification and parental consent. The backend architecture was designed to handle high traffic volumes from popular global gaming titles.
+
+**Database** PostgreSQL was used for reliable, relational data storage, ensuring the integrity of consent records and user data.
+
+**Infrastructure & DevOps** The platform was deployed on AWS using Docker for containerization, enabling consistent environments across development and production. CI/CD practices were fundamental to ensure safe and frequent deployments of this sensitive platform. DataDog and PagerDuty were used for monitoring and alerting, ensuring that any issues could be quickly identified and resolved.
+
+Key technical contributions include:
+- Integration with third-party age verification providers
+- Localization for global markets
+- High-security standards for PII (Personally Identifiable Information)
+- Implementation of GDPR and COPPA compliance features
+- Scalable monolithic architecture on AWS`,
+    images: [{
+      url: kws1,
+      alt: 'KWS landing page',
+      displayDuration: 3_000
+    }, {
+      url: kws0,
+      alt: 'KWS dashboard',
+      displayDuration: 3_000
+    }, {
+      url: kws2,
+      alt: 'KWS parent flow',
+      displayDuration: 3_000
+    }, {
+      url: kws3,
+      alt: 'KWS developer tools',
+      displayDuration: 3_000
+    }, {
+      url: kws4,
+      alt: 'KWS mobile view',
+      displayDuration: 3_000
+    }],
+    externalLink: 'https://www.kidswebservices.com/',
+    technologies: ['Angular.js', 'Node.js', 'Postgresql', 'JavaScript', 'AWS', 'Docker']
+  },
 ]
 
 export function getProjectById(id) {
