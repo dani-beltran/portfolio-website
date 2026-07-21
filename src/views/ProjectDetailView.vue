@@ -1,5 +1,5 @@
-<script setup>
-import { computed } from 'vue';
+<script setup lang="tsx">
+import { computed, onMounted, onUnmounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import MagnifiableImageGallery from '../components/MagnifiableImageGallery.vue';
 import { getProjectById } from '../data/projects';
@@ -12,6 +12,35 @@ const project = computed(() => getProjectById(route.params.id));
 function goBack() {
   router.push('/');
 }
+
+function formatImplementation(text) {
+  // Convert markdown-style formatting to HTML
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/^- (.*?)$/gm, '<li>$1</li>')
+    .replace(/(?:<li>.*?<\/li>\n?)+/g, '<ul>$&</ul>')
+    .split('\n\n')
+    .map(p => {
+      if (p.includes('<ul>')) return p
+      if (p.includes('<strong>')) return `<p class="paragraph">${p}</p>`
+      return `<p class="paragraph">${p}</p>`
+    })
+    .join('')
+}
+
+function handlePressKey(event) {
+  if(event.key === 'Backspace') {
+    goBack();
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handlePressKey);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handlePressKey);
+});
 </script>
 
 <template>
@@ -69,27 +98,6 @@ function goBack() {
     </button>
   </div>
 </template>
-
-<script>
-export default {
-  methods: {
-    formatImplementation(text) {
-      // Convert markdown-style formatting to HTML
-      return text
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/^- (.*?)$/gm, '<li>$1</li>')
-        .replace(/(?:<li>.*?<\/li>\n?)+/g, '<ul>$&</ul>')
-        .split('\n\n')
-        .map(p => {
-          if (p.includes('<ul>')) return p
-          if (p.includes('<strong>')) return `<p class="paragraph">${p}</p>`
-          return `<p class="paragraph">${p}</p>`
-        })
-        .join('')
-    }
-  }
-}
-</script>
 
 <style scoped>
 .project-detail {
