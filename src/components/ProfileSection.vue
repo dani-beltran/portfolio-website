@@ -25,7 +25,7 @@ function onImageLoad() {
       <p class="title">Software Engineer</p>
       <p class="description">
         Passionate developer with over 10 years of experience crafting web applications. 
-        Specialized in building scalable, user-centric solutions from concept to deployment.
+        Specialized in building scalable, user-centric web services from concept to deployment.
       </p>
     </div>
     <SocialLinks />

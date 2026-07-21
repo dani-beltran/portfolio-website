@@ -1,16 +1,22 @@
-import deckuGif from '../assets/deckudb-demo.gif';
-import kws0 from '../assets/kws0.webp';
-import kws1 from '../assets/kws1.avif';
-import kws2 from '../assets/kws2.webp';
-import kws3 from '../assets/kws3.webp';
-import kws4 from '../assets/kws4.webp';
-import layerzGif from '../assets/layerz-demo.gif';
-import layerzProductGif from '../assets/layerz-product-demo.gif';
-import nodescriptGif from '../assets/nodescript-demo.gif';
-import deckuImage from '../assets/screenshot-deckudb.png';
-import layerzImage2 from '../assets/screenshot-layerz-2.png';
-import nodescriptImage from '../assets/screenshot-nodescript.jpg';
-import nodescriptImage2 from '../assets/screenshot-nodescript-2.png';
+import deckuGif from '../assets/decku/deckudb-demo.gif';
+import kws0 from '../assets/kws/kws0.webp';
+import kws1 from '../assets/kws/kws1.avif';
+import kws2 from '../assets/kws/kws2.webp';
+import kws3 from '../assets/kws/kws3.webp';
+import kws4 from '../assets/kws/kws4.webp';
+import layerzGif from '../assets/lz/layerz-demo.gif';
+import layerzProductGif from '../assets/lz/layerz-product-demo.gif';
+import nodescriptGif from '../assets/ns/nodescript-demo.gif';
+import deckuImage from '../assets/decku/screenshot-deckudb.png';
+import layerzImage2 from '../assets/lz/screenshot-layerz-2.png';
+import nodescriptImage from '../assets/ns/screenshot-nodescript.jpg';
+import nodescriptImage2 from '../assets/ns/screenshot-nodescript-2.png';
+import swDemo from '../assets/sw/sw-demo.png';
+import swAd from '../assets/sw/sw-ad.png';
+import swDashboard from '../assets/sw/sw-dashboard.png';
+import swDocs from '../assets/sw/sw-docs.png';
+import swNewsletter from '../assets/sw/sw-newsletter.png';
+import swSubs from '../assets/sw/sw-subs.png';
 
 export const ProjectType = {
   Work: 'Work',
@@ -198,6 +204,85 @@ Key technical contributions include:
     ],
   },
   {
+    id: 'smartwall',
+    name: 'SmartWall',
+    type: ProjectType.Work,
+    dateRange: 'Jul 2017 - Mar 2022',
+    shortDescription:
+      'Multi-tenant SaaS platform for digital advertising and subscriptions, scaled through real-time analytics, secure SSO, and resilient cloud infrastructure.',
+    description: `SmartWall is an AI-powered, dynamic paywall technology designed for online media and publishers. It uses machine learning to personalize user payment experiences, allowing readers to unlock single articles through micropayments or seamlessly transition into subscriptions.
+
+  The SmartWall platform evaluates user behavior, reading context, and engagement data in real-time to optimize how paywalls are presented.
+
+  Its core features include dynamic paywall personalization, article-level micropayments, and subscription conversion optimization.
+
+  Founded in Lausanne, Switzerland, the company and its technology were acquired by the subscription management firm ASMIQ in 2020.
+
+  SmartWall also operated as a multi-tenant SaaS platform focused on digital advertising operations, subscription management, and customer analytics. The product served more than 100 customers and supported over 1 million daily visitors, requiring strong reliability, secure tenancy boundaries, and rapid feature delivery.
+
+  I led development in a remote-first Agile environment with a core team of 3 engineers, driving rapid product iterations and cross-functional execution. Following acquisition, I also led the post-acquisition handoff of SwissPay's SmartWall product into ASMIQ's infrastructure and platform ecosystem.`,
+    implementation: `My work on SmartWall spanned architecture, platform scaling, infrastructure modernization, and team leadership:
+
+**Architecture & Scale** Architected and scaled a multi-tenant SaaS platform to support high traffic and customer growth while keeping delivery velocity high.
+
+**Infrastructure** Eliminated manual infrastructure toil through a zero-downtime migration to Infrastructure as Code with Terraform on AWS.
+
+**Real-time Analytics** Built a real-time analytics pipeline handling millions of daily events using Apache Kafka and Apache Druid.
+
+**Codebase Quality** Led a JavaScript to TypeScript migration, improving maintainability, code quality, and onboarding speed for new engineers.
+
+**Security** Improved platform security by implementing OAuth2-based SSO and RBAC for multi-tenant access control.
+
+**Payments & Billing** Integrated Stripe and PayPal, and built SaaS billing management capabilities.
+
+**Post-Acquisition Integration** Architected and delivered integration of ASMIQ's subscription platform into SmartWall as part of the product handoff.
+
+**Engineering Leadership** Grew and managed an engineering team of 5, leading sprint planning, code reviews, and technical hiring.`,
+    images: [
+      {
+        url: swDemo,
+        alt: 'SmartWall demo',
+        displayDuration: 3_000,
+      },
+      {
+        url: swSubs,
+        alt: 'SmartWall subscriptions',
+        displayDuration: 3_000,
+      },
+      {
+        url: swAd,
+        alt: 'SmartWall ad management',
+        displayDuration: 3_000,
+      },
+      {
+        url: swNewsletter,
+        alt: 'SmartWall newsletter tools',
+        displayDuration: 3_000,
+      },
+      {
+        url: swDashboard,
+        alt: 'SmartWall dashboard',
+        displayDuration: 3_000,
+      },
+      {
+        url: swDocs,
+        alt: 'SmartWall documentation',
+        displayDuration: 3_000,
+      },
+    ],
+    technologies: [
+      'Node.js',
+      'React',
+      'PostgreSQL',
+      'AWS',
+      'Terraform',
+      'Kafka',
+      'Druid',
+      'Redis',
+      'Datadog',
+    ],
+  },
+  {
     id: 'kws',
     name: 'Kids Web Services (KWS)',
     type: ProjectType.Work,
@@ -206,7 +291,9 @@ Key technical contributions include:
       'The leading platform for kids’ digital safety and parental consent management, used by major gaming and entertainment companies.',
     description: `Kids Web Services (KWS) is a developer-facing platform that provides the tools necessary to build compliant and safe digital experiences for younger audiences. It is used by some of the largest names in gaming and entertainment to manage parental consent, age verification, and data privacy in accordance with global regulations like COPPA and GDPR-K.
 
-The platform streamlines the process of verifying a parent's identity and obtaining their permission for children to access various online features. By providing a unified, secure, and compliant solution, KWS enables developers to focus on creating engaging content while ensuring the safety and privacy of their youngest users.`,
+The platform streamlines the process of verifying a parent's identity and obtaining their permission for children to access various online features. By providing a unified, secure, and compliant solution, KWS enables developers to focus on creating engaging content while ensuring the safety and privacy of their youngest users.
+
+Originally developed by the British "kidtech" startup SuperAwesome, KWS became a core asset of Epic Games following a corporate acquisition`,
     implementation: `Working on KWS involved maintaining and scaling a mission-critical platform with high availability and strict security requirements:
 
 **Frontend** Built with Angular.js and JavaScript, focusing on a robust and maintainable dashboard for developers and a seamless, localized experience for parents during the consent flow.
