@@ -89,6 +89,7 @@ onUnmounted(() => {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   cursor: zoom-in;
   transition: transform 0.2s ease;
+  object-fit: contain;
 }
 
 .image-container:hover {
@@ -96,9 +97,12 @@ onUnmounted(() => {
 }
 
 .image-container img {
-  width: 100%;
+  width: auto;
   height: auto;
+  margin: auto;
   display: block;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .smooth-img {
