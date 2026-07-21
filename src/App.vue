@@ -24,6 +24,8 @@ const isDetailPage = computed(() => route.name === 'project');
 }
 
 .container {
+  width: 100%;
+  min-width: 0;
   max-width: 860px;
   margin: 0 auto;
   padding: 4rem 1.5rem;

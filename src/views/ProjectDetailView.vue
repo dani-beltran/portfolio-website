@@ -93,6 +93,8 @@ export default {
 
 <style scoped>
 .project-detail {
+  width: 100%;
+  min-width: 0;
   max-width: 860px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
@@ -125,6 +127,7 @@ export default {
   letter-spacing: -0.02em;
   color: var(--color-text);
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .project-title a {
@@ -179,12 +182,14 @@ export default {
   line-height: 1.7;
   color: var(--color-text);
   margin-bottom: 1rem;
+  overflow-wrap: anywhere;
 }
 
 .implementation-content {
   font-size: 1rem;
   line-height: 1.7;
   color: var(--color-text);
+  overflow-wrap: anywhere;
 }
 
 .implementation-content :deep(strong) {
