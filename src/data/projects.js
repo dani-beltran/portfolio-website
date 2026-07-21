@@ -29,7 +29,7 @@ export const projects = [
     id: 'deckudb',
     name: 'DeckuDB',
     type: ProjectType.Personal,
-    dateRange: 'Oct 2025 - Present',
+    dateRange: 'Oct 2025 - Jun 2026',
     shortDescription:
       'A comprehensive database for Steam Deck game compatibility, helping gamers find the best experiences for their portable gaming device.',
     description: `DeckuDB is a comprehensive database aggregating community reports on Steam Deck game compatibility. The project emerged from the need for centralized, accurate, community-driven information about which games work best on Valve's handheld gaming device.
@@ -37,22 +37,19 @@ export const projects = [
 The platform features a user-friendly interface that allows gamers to search through thousands of game titles, check compatibility ratings, filter by performance metrics, and read community reviews. Each game entry includes users provided information about performance expectations, control schemes, and any special configurations needed.
 
 Built with modern web technologies, DeckuDB emphasizes fast load times and an intuitive user experience. The database is continuously updated by a web crawler, ensuring that information remains current as new games are released and the Steam Deck software evolves.`,
-    implementation: `The project is built using a modern full-stack architecture:
+    implementation: `In this project, I focused on product architecture, data automation, and performance for a community-driven platform:
 
-**Frontend** Vue.js 3 with Vite for blazing-fast development and optimized production builds. The UI leverages Vue's capabilities for clean, maintainable code and responsive design that works seamlessly across desktop and mobile devices.
+  **Platform Architecture** Designed and delivered a full-stack Vue + Node.js + MongoDB application optimized for fast search and a clean browsing experience across desktop and mobile.
 
-**Backend** Node.js with Express, providing a RESTful API that serves game data and user submissions. The API is designed with performance in mind, implementing caching strategies and efficient database queries. The backend also includes a web crawler that periodically scrapes data from various sources to keep the database up-to-date with the latest game compatibility reports.
+  **Data Acquisition Pipeline** Built and maintained an automated crawler pipeline that continuously collects and normalizes community reports data from multiple sources to keep the catalog current.
 
-**Database** MongoDB for flexible document storage, perfect for handling varied game metadata and user-generated content. Indexes are strategically placed for optimal query performance.
+  **Search & Discovery** Implemented responsive filtering and debounced search to help users quickly find relevant titles and performance reports.
 
-**Deployment** Containerized with Docker and deployed on cloud infrastructure, ensuring scalability and reliability. The application uses CI/CD pipelines for automated testing and deployment.
+  **Data Modeling & Performance** Structured MongoDB collections, indexing strategy and caching for efficient querying of large, evolving game metadata and user-generated reports.
 
-Key technical features include:
-- Progressive Web App (PWA) capabilities for offline access
-- Real-time search with debouncing for instant results
-- Data lazy loading for performance
-- SEO-friendly routing and meta tags
-- Comprehensive error handling and logging`,
+  **Reliability & Delivery** Containerized services with Docker and set up CI/CD workflows to ship updates safely and maintain consistent runtime environments.
+
+  **User Experience** Added SEO-friendly routing, lazy loading, and robust error handling to improve discoverability, performance, and day-to-day usability.`,
     images: [
       {
         url: deckuImage,
@@ -90,31 +87,21 @@ Key technical features include:
 The platform provides powerful tools for customer segmentation and engagement, predictive analytics, and automated marketing campaigns. Business owners can access real-time dashboards that visualize key metrics and trends, enabling data-driven decision making.
 
 LayerZ integrates seamlessly with any e-commerce platform, making it easy for businesses to adopt without disrupting their existing workflows.`,
-    implementation: `LayerZ is architected as a modern, scalable SaaS application:
+    implementation: `My work on LayerZ spans multi-tenant SaaS architecture, AI product capabilities, and production-grade platform operations:
 
-**Frontend** Vue.js with TypeScript for type-safe, component-based development. The UI is built with Shadcn UI and Tailwind CSS for a sleek, responsive design. The frontend communicates with the backend via RESTful APIs. The platform also includes a custom-built AI-powered code generation engine that allows users to create personalized marketing campaigns without needing technical expertise.
+  **Architecture & Product Delivery** Architected core frontend and backend services with Vue, TypeScript, Node.js, and Express to support rapid iteration of AI-driven e-commerce features.
 
-**Backend** Restful API with Node.js, TypeScript and Express. The backend handles all business logic, data processing, and AI interactions. It integrates with various third-party services for email marketing, CRM, and analytics.
+  **AI Campaign Engine** Built and evolved an AI code-generation workflow that enables non-technical users to create personalized campaign assets through natural-language prompts.
 
-**AI** The AI-powered coding engine helps businesses personalize marketing campaigns without needing technical expertise. It uses Claude 4.5 Sonnet for natural language processing and code generation, allowing users to create custom HTML banners for customer engagement and sales optimization. 
-The AI sales agent leverages LangChain, LangGraph, MCP, and RAG to provide multi-step reasoning and decision-making capabilities, enabling businesses to automate complex sales processes and customer interactions.
+  **AI Sales Agent** Implemented multi-step reasoning pipelines using LangChain, LangGraph, MCP, and RAG to automate customer engagement and sales actions.
 
-**Database** MongoDB for flexible document storage, perfect at early stages where changes are frequent. Indexes are strategically placed for optimal query performance.
+  **Security & Multi-Tenancy** Implemented OAuth2-based SSO and RBAC to enforce tenant isolation and secure access across customer accounts.
 
-**Deployment** Containerized with Docker and deployed on cloud infrastructure, ensuring scalability and reliability. The application uses CI/CD pipelines for automated testing and deployment.
+  **Real-time Analytics** Designed analytics ingestion and reporting flows backed by Imply Polaris (Apache Druid) for near real-time business insights.
 
-**Security** Implementation of OAuth 2.0 for authentication, role-based access control, and encryption of sensitive data both in transit and at rest. GDPR compliance measures are built into the platform.
+  **Infrastructure & Reliability** Led Docker-based deployments, CI/CD automation, and Terraform-driven AWS infrastructure management for repeatable, resilient releases.
 
-Key technical contributions include:
-- oAuth2-based SSO and RBAC for multi-tenant SaaS 
-- Real-time analytics using Imply Polaris (Apache Druid)
-- Advanced rate limiting and DDoS protection
-- Multi-step AI agents leveraging LangChain, LangGraph, MCP and RAG.
-- IaC with Terraform for infrastructure management on AWS
-- Comprehensive logging and monitoring
-- Automated testing with Playwright and Vitest
-- Continuous integration and deployment with GitHub Actions
-- Webhook support for external integrations`,
+  **Quality & Integrations** Added Playwright and Vitest coverage, rate limiting and DDoS protections, and webhook integrations for external ecosystem connectivity.`,
     images: [
       {
         url: layerzImage2,
@@ -157,23 +144,19 @@ The visual programming interface uses a node-based system where users can drag a
 NodeScript excels at handling complex ETL (Extract, Transform, Load) processes, data validation, enrichment, and distribution. The platform enables teams to manage APIs, monitor servers, and automate DevOps tasks, while providing rapid prototyping capabilities with instant debugging that lets you view each intermediary step as you build your workflows.
 
 Users can schedule workflows to run automatically, set up triggers based on events, and monitor execution with detailed logging and error handling. The platform supports real-time collaboration, allowing teams to build, share, and collaborate on workflows together, making it invaluable for organizations looking to reduce their dependence on engineering resources for routine data operations while maintaining reliability and scalability.`,
-    implementation: `NodeScript is built with a focus on usability, reliability, and extensibility:
+    implementation: `My work on NodeScript focused on making complex automation workflows accessible, secure, and scalable for non-technical users:
 
-**Frontend** Vue.js 3 with a custom canvas-based node editor. The visual programming interface uses HTML5 Canvas for rendering the node graph, providing smooth interactions and zoom capabilities.
+  **Workflow Platform Architecture** Designed and delivered no-code workflow platform core features using Vue, TypeScript, Node.js, and MongoDB with a focus on extensibility.
 
-**Backend** TypeScript and Node.js for the execution engine and API. The backend is designed to handle concurrent workflow executions, manage state, and provide a robust API for workflow management.
+  **Visual Builder Experience** Built key capabilities in the node-based editor, including smooth graph interactions and configuration flows that reduced friction for workflow creation.
 
-**Data Storage** MongoDB for storing workflow definitions, execution logs, and user data. The flexible schema allows for easy evolution of the data model as new features are added.
+  **Execution Engine** Improved backend orchestration patterns to support concurrent pipeline runs, execution state management, and reliable endpoint-triggered workflows.
 
-**Monitoring** Prometheus and Grafana for real-time monitoring of workflow execution metrics, system performance, and resource utilization.
+  **Collaboration** Added workflow versioning and real-time collaboration primitives to support team-based authoring and safer iterative changes.
 
-Key technical contributions include:
-- Plugin architecture for extensible data connectors
-- Version control system for workflow definitions
-- Real-time collaboration features using operational transform
-- Sandboxed execution environment for security
-- Advanced rate limiting and DDoS protection
-- Credit system for managing workflow execution costs`,
+  **Security & Operational Controls** Implemented sandboxed execution, rate limiting, and a credit-based control model to improve tenant safety and cost management.
+
+  **Observability** Integrated Prometheus and Grafana metrics to monitor runtime health, usage patterns, and system performance under load.`,
     images: [
       {
         url: nodescriptImage2,
@@ -223,7 +206,7 @@ Key technical contributions include:
   I led development in a remote-first Agile environment with a core team of 3 engineers, driving rapid product iterations and cross-functional execution. Following acquisition, I also led the post-acquisition handoff of SwissPay's SmartWall product into ASMIQ's infrastructure and platform ecosystem.`,
     implementation: `My work on SmartWall spanned architecture, platform scaling, infrastructure modernization, and team leadership:
 
-**Architecture & Scale** Architected and scaled a multi-tenant SaaS platform to support high traffic and customer growth while keeping delivery velocity high.
+**Architecture & Scale** Architected and scaled a multi-tenant SaaS platform built with Node.js, React, and PostgreSQL to support high traffic and customer growth while keeping delivery velocity high.
 
 **Infrastructure** Eliminated manual infrastructure toil through a zero-downtime migration to Infrastructure as Code with Terraform on AWS.
 
@@ -294,22 +277,19 @@ Key technical contributions include:
 The platform streamlines the process of verifying a parent's identity and obtaining their permission for children to access various online features. By providing a unified, secure, and compliant solution, KWS enables developers to focus on creating engaging content while ensuring the safety and privacy of their youngest users.
 
 Originally developed by the British "kidtech" startup SuperAwesome, KWS became a core asset of Epic Games following a corporate acquisition`,
-    implementation: `Working on KWS involved maintaining and scaling a mission-critical platform with high availability and strict security requirements:
+    implementation: `My work on KWS focused on scaling a compliance-critical platform while improving security, reliability, and global usability:
 
-**Frontend** Built with Angular.js and JavaScript, focusing on a robust and maintainable dashboard for developers and a seamless, localized experience for parents during the consent flow.
+  **Platform Reliability** Helped operate and evolve a high-availability Node.js platform handling parental consent and age-gate workflows for major gaming publishers.
 
-**Backend** Powered by Node.js, express.js and JavaScript, handling complex workflows for age verification and parental consent. The backend architecture was designed to handle high traffic volumes from popular global gaming titles.
+  **Consent Flow Engineering** Built and maintained backend workflows for identity and consent processing, including integrations with third-party verification providers.
 
-**Database** PostgreSQL was used for reliable, relational data storage, ensuring the integrity of consent records and user data.
+  **Security & Compliance** Implemented and maintained controls aligned with COPPA and GDPR-K, with strict handling requirements for sensitive user and guardian data.
 
-**Infrastructure & DevOps** The platform was deployed on AWS using Docker for containerization, enabling consistent environments across development and production. CI/CD practices were fundamental to ensure safe and frequent deployments of this sensitive platform. DataDog and PagerDuty were used for monitoring and alerting, ensuring that any issues could be quickly identified and resolved.
+  **Global Product Delivery** Improved localized parent and developer experiences, enabling regional rollout and smoother compliance journeys across markets.
 
-Key technical contributions include:
-- Integration with third-party age verification providers
-- Localization for global markets
-- High-security standards for PII (Personally Identifiable Information)
-- Implementation of GDPR and COPPA compliance features
-- Scalable monolithic architecture on AWS`,
+  **Data Integrity** Worked with PostgreSQL-backed domain models to preserve consistency and auditability of consent records.
+
+  **Infrastructure & Operations** Contributed to AWS + Docker delivery workflows, CI/CD pipelines, and production observability using Datadog and PagerDuty for fast incident response.`,
     images: [
       {
         url: kws1,
