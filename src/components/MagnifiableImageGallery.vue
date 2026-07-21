@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted, onUnmounted, useTemplateRef } from 'vue'
-import ImageGalleryControls from './ImageGalleryControls.vue'
+import { onMounted, onUnmounted, ref, useTemplateRef } from 'vue';
+import ImageGalleryControls from './ImageGalleryControls.vue';
 
 const props = defineProps({
   images: {
@@ -13,34 +13,34 @@ const props = defineProps({
         properties: {
           url: { type: 'string' },
           alt: { type: 'string' },
-          displayDuration: { type: 'number' }
+          displayDuration: { type: 'number' },
         },
-        required: ['url']
-      }
-    }
+        required: ['url'],
+      },
+    },
   },
   autoCycle: {
     type: Boolean,
-    default: false
+    default: false,
   },
   alt: {
     type: String,
-    default: ''
-  }
-})
+    default: '',
+  },
+});
 
-const showFullscreen = ref(false)
-const imgIndex = ref(0)
+const showFullscreen = ref(false);
+const imgIndex = ref(0);
 const imageRef = useTemplateRef('imgRef');
 let cycleTimeoutId = null;
 
 function toggleFullscreen() {
-  showFullscreen.value = !showFullscreen.value
+  showFullscreen.value = !showFullscreen.value;
 }
 
 function handleEscKey(event) {
   if (event.key === 'Escape') {
-    showFullscreen.value = false
+    showFullscreen.value = false;
   }
 }
 
@@ -82,7 +82,7 @@ const scheduleCycle = () => {
   if (!props.autoCycle) {
     return;
   }
-  
+
   if (cycleTimeoutId) {
     clearTimeout(cycleTimeoutId);
     cycleTimeoutId = null;
@@ -96,8 +96,8 @@ const scheduleCycle = () => {
   cycleTimeoutId = setTimeout(async () => {
     await showNextImage();
     scheduleCycle();
-  }, duration)
-}
+  }, duration);
+};
 
 async function handleNextClick() {
   await showNextImage();
@@ -110,16 +110,16 @@ async function handlePreviousClick() {
 }
 
 onMounted(() => {
-  window.addEventListener('keydown', handleEscKey)
+  window.addEventListener('keydown', handleEscKey);
   scheduleCycle();
-})
+});
 
 onUnmounted(() => {
-  window.removeEventListener('keydown', handleEscKey)
+  window.removeEventListener('keydown', handleEscKey);
   if (cycleTimeoutId) {
     clearTimeout(cycleTimeoutId);
   }
-})
+});
 </script>
 
 <template>

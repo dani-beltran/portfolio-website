@@ -1,16 +1,16 @@
 <script setup>
-import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { getProjectById } from '../data/projects'
-import MagnifiableImageGallery from '../components/MagnifiableImageGallery.vue'
+import { computed } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import MagnifiableImageGallery from '../components/MagnifiableImageGallery.vue';
+import { getProjectById } from '../data/projects';
 
-const route = useRoute()
-const router = useRouter()
+const route = useRoute();
+const router = useRouter();
 
-const project = computed(() => getProjectById(route.params.id))
+const project = computed(() => getProjectById(route.params.id));
 
 function goBack() {
-  router.push('/')
+  router.push('/');
 }
 </script>
 

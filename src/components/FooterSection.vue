@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import SocialLinks from "./SocialLinks.vue";
+import SocialLinks from './SocialLinks.vue';
 
 const currentYear = new Date().getFullYear();
 </script>

@@ -1,10 +1,10 @@
 <script setup>
-import { useRoute } from 'vue-router'
-import FooterSection from './components/FooterSection.vue'
-import { computed } from 'vue'
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+import FooterSection from './components/FooterSection.vue';
 
-const route = useRoute()
-const isDetailPage = computed(() => route.name === 'project')
+const route = useRoute();
+const isDetailPage = computed(() => route.name === 'project');
 </script>
 
 <template>

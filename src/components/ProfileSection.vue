@@ -1,11 +1,11 @@
 <script setup>
-import { ref } from 'vue'
-import profileImage from '../assets/profile.jpeg'
+import { ref } from 'vue';
+import profileImage from '../assets/profile.jpeg';
 
-const imageVisible = ref(false)
+const imageVisible = ref(false);
 
 function onImageLoad() {
-  imageVisible.value = true
+  imageVisible.value = true;
 }
 </script>
 

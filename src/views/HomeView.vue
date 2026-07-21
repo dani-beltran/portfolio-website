@@ -1,7 +1,7 @@
 <script setup>
-import ProfileSection from '../components/ProfileSection.vue'
-import ProjectsSection from '../components/ProjectsSection.vue'
-import { projects, ProjectType } from '../data/projects'
+import ProfileSection from '../components/ProfileSection.vue';
+import ProjectsSection from '../components/ProjectsSection.vue';
+import { ProjectType, projects } from '../data/projects';
 </script>
 
 <template>

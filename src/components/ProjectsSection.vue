@@ -1,27 +1,27 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue';
 
-const loadedImages = ref(new Set())
+const loadedImages = ref(new Set());
 
 const props = defineProps({
   title: {
     type: String,
     required: false,
-    default: () => 'Projects'
+    default: () => 'Projects',
   },
   description: {
     type: String,
-    required: false
+    required: false,
   },
   projects: {
     type: Array,
     required: false,
-    default: () => []
-  }
-})
+    default: () => [],
+  },
+});
 
 function onImageLoad(projectName) {
-  loadedImages.value.add(projectName)
+  loadedImages.value.add(projectName);
 }
 </script>
 

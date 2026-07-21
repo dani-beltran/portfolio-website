@@ -1,23 +1,22 @@
-import deckuImage from '../assets/screenshot-deckudb.png'
-import nodescriptImage from '../assets/screenshot-nodescript.jpg'
-import deckuGif from '../assets/deckudb-demo.gif'
-import nodescriptGif from '../assets/nodescript-demo.gif'
-import layerzGif from '../assets/layerz-demo.gif'
-import layerzImage2 from '../assets/screenshot-layerz-2.png'
-import layerzProductGif from '../assets/layerz-product-demo.gif'
-import nodescriptImage2 from '../assets/screenshot-nodescript-2.png'
-import kws1 from '../assets/kws1.avif'
-import kws0 from '../assets/kws0.webp'
-import kws2 from '../assets/kws2.webp'
-import kws3 from '../assets/kws3.webp'
-import kws4 from '../assets/kws4.webp'
-
+import deckuGif from '../assets/deckudb-demo.gif';
+import kws0 from '../assets/kws0.webp';
+import kws1 from '../assets/kws1.avif';
+import kws2 from '../assets/kws2.webp';
+import kws3 from '../assets/kws3.webp';
+import kws4 from '../assets/kws4.webp';
+import layerzGif from '../assets/layerz-demo.gif';
+import layerzProductGif from '../assets/layerz-product-demo.gif';
+import nodescriptGif from '../assets/nodescript-demo.gif';
+import deckuImage from '../assets/screenshot-deckudb.png';
+import layerzImage2 from '../assets/screenshot-layerz-2.png';
+import nodescriptImage from '../assets/screenshot-nodescript.jpg';
+import nodescriptImage2 from '../assets/screenshot-nodescript-2.png';
 
 export const ProjectType = {
   Work: 'Work',
   Personal: 'Personal',
-  OpenSource: 'Open Source'
-}
+  OpenSource: 'Open Source',
+};
 
 export const projects = [
   {
@@ -25,7 +24,8 @@ export const projects = [
     name: 'DeckuDB',
     type: ProjectType.Personal,
     dateRange: 'Oct 2025 - Present',
-    shortDescription: 'A comprehensive database for Steam Deck game compatibility, helping gamers find the best experiences for their portable gaming device.',
+    shortDescription:
+      'A comprehensive database for Steam Deck game compatibility, helping gamers find the best experiences for their portable gaming device.',
     description: `DeckuDB is a comprehensive database aggregating community reports on Steam Deck game compatibility. The project emerged from the need for centralized, accurate, community-driven information about which games work best on Valve's handheld gaming device.
 
 The platform features a user-friendly interface that allows gamers to search through thousands of game titles, check compatibility ratings, filter by performance metrics, and read community reviews. Each game entry includes users provided information about performance expectations, control schemes, and any special configurations needed.
@@ -47,24 +47,38 @@ Key technical features include:
 - Data lazy loading for performance
 - SEO-friendly routing and meta tags
 - Comprehensive error handling and logging`,
-    images: [{
-      url: deckuImage,
-      alt: 'DeckuDB screenshot',
-      displayDuration: 2_000
-    }, {
-      url: deckuGif,
-      alt: 'DeckuDB demo GIF',
-      displayDuration: 48_000
-    }],
+    images: [
+      {
+        url: deckuImage,
+        alt: 'DeckuDB screenshot',
+        displayDuration: 2_000,
+      },
+      {
+        url: deckuGif,
+        alt: 'DeckuDB demo GIF',
+        displayDuration: 48_000,
+      },
+    ],
     externalLink: 'https://deckudb.com',
-    technologies: ['Vue.js', 'TypeScript', 'JavaScript', 'Node.js', 'MongoDB', 'Express', 'Docker', 'Vite', 'LLM APIs']
+    technologies: [
+      'Vue.js',
+      'TypeScript',
+      'JavaScript',
+      'Node.js',
+      'MongoDB',
+      'Express',
+      'Docker',
+      'Vite',
+      'LLM APIs',
+    ],
   },
   {
     id: 'layerz',
     name: 'LayerZ',
     type: ProjectType.Work,
     dateRange: 'Nov 2024 - Present',
-    shortDescription: 'A SaaS platform that empower your e-commerce business with advanced AI-driven tools to optimize sales and customer engagement.',
+    shortDescription:
+      'A SaaS platform that empower your e-commerce business with advanced AI-driven tools to optimize sales and customer engagement.',
     description: `LayerZ is a cutting-edge SaaS platform designed to revolutionize e-commerce operations through artificial intelligence and advanced analytics. The platform serves as a comprehensive solution for online businesses looking to optimize their sales processes, understand customer behavior, and increase conversion rates.
 
 The platform provides powerful tools for customer segmentation and engagement, predictive analytics, and automated marketing campaigns. Business owners can access real-time dashboards that visualize key metrics and trends, enabling data-driven decision making.
@@ -95,29 +109,41 @@ Key technical contributions include:
 - Automated testing with Playwright and Vitest
 - Continuous integration and deployment with GitHub Actions
 - Webhook support for external integrations`,
-    images: [{
-      url: layerzImage2,
-      alt: 'LayerZ concept image',
-      displayDuration: 2_000
-    }, {
-      url: layerzProductGif,
-      alt: 'LayerZ concept demo GIF',
-      displayDuration: 45_000
-    },
-    {
-      url: layerzGif,
-      alt: 'LayerZ dashboard demo GIF',
-      displayDuration: 4 * 60_000
-    }],
+    images: [
+      {
+        url: layerzImage2,
+        alt: 'LayerZ concept image',
+        displayDuration: 2_000,
+      },
+      {
+        url: layerzProductGif,
+        alt: 'LayerZ concept demo GIF',
+        displayDuration: 45_000,
+      },
+      {
+        url: layerzGif,
+        alt: 'LayerZ dashboard demo GIF',
+        displayDuration: 4 * 60_000,
+      },
+    ],
     externalLink: 'https://layerz.com/',
-    technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MongoDB', 'Nuxt.js', 'Tailwind CSS', 'Docker']
+    technologies: [
+      'Vue.js',
+      'TypeScript',
+      'Node.js',
+      'MongoDB',
+      'Nuxt.js',
+      'Tailwind CSS',
+      'Docker',
+    ],
   },
   {
     id: 'nodescript',
     name: 'NodeScript',
     type: ProjectType.Work,
     dateRange: 'May 2023 - Nov 2024',
-    shortDescription: 'No-code platform for data pipelines and automation, enabling users to create complex workflows without writing code.',
+    shortDescription:
+      'No-code platform for data pipelines and automation, enabling users to create complex workflows without writing code.',
     description: `NodeScript is an innovative no-code platform that democratizes data pipeline creation and workflow automation. The platform enables business analysts, product managers, and operations teams to build sophisticated data workflows without writing a single line of code.
 
 The visual programming interface uses a node-based system where users can drag and drop components, connect them together, and configure data transformations. Connect any app, integrate APIs, and create workflows that can be executed through an endpoint, making them instantly available for other applications to consume.
@@ -142,28 +168,42 @@ Key technical contributions include:
 - Sandboxed execution environment for security
 - Advanced rate limiting and DDoS protection
 - Credit system for managing workflow execution costs`,
-    images: [{
-      url: nodescriptImage2,
-      alt: 'NodeScript website screenshot',
-      displayDuration: 3_000
-    },{
-      url: nodescriptImage,
-      alt: 'NodeScript no code workflow editor screenshot',
-      displayDuration: 5_000
-    }, {
-      url: nodescriptGif,
-      alt: 'NodeScript demo GIF',
-      displayDuration: 94_000
-    }],
+    images: [
+      {
+        url: nodescriptImage2,
+        alt: 'NodeScript website screenshot',
+        displayDuration: 3_000,
+      },
+      {
+        url: nodescriptImage,
+        alt: 'NodeScript no code workflow editor screenshot',
+        displayDuration: 5_000,
+      },
+      {
+        url: nodescriptGif,
+        alt: 'NodeScript demo GIF',
+        displayDuration: 94_000,
+      },
+    ],
     externalLink: 'https://nodescript.dev',
-    technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MongoDB', 'Canvas API', 'Prometheus', 'Grafana', 'Kubernetes']
+    technologies: [
+      'Vue.js',
+      'TypeScript',
+      'Node.js',
+      'MongoDB',
+      'Canvas API',
+      'Prometheus',
+      'Grafana',
+      'Kubernetes',
+    ],
   },
   {
     id: 'kws',
     name: 'Kids Web Services (KWS)',
     type: ProjectType.Work,
     dateRange: 'Mar 2016 - Apr 2017',
-    shortDescription: 'The leading platform for kids’ digital safety and parental consent management, used by major gaming and entertainment companies.',
+    shortDescription:
+      'The leading platform for kids’ digital safety and parental consent management, used by major gaming and entertainment companies.',
     description: `Kids Web Services (KWS) is a developer-facing platform that provides the tools necessary to build compliant and safe digital experiences for younger audiences. It is used by some of the largest names in gaming and entertainment to manage parental consent, age verification, and data privacy in accordance with global regulations like COPPA and GDPR-K.
 
 The platform streamlines the process of verifying a parent's identity and obtaining their permission for children to access various online features. By providing a unified, secure, and compliant solution, KWS enables developers to focus on creating engaging content while ensuring the safety and privacy of their youngest users.`,
@@ -183,32 +223,38 @@ Key technical contributions include:
 - High-security standards for PII (Personally Identifiable Information)
 - Implementation of GDPR and COPPA compliance features
 - Scalable monolithic architecture on AWS`,
-    images: [{
-      url: kws1,
-      alt: 'KWS landing page',
-      displayDuration: 3_000
-    }, {
-      url: kws0,
-      alt: 'KWS dashboard',
-      displayDuration: 3_000
-    }, {
-      url: kws2,
-      alt: 'KWS parent flow',
-      displayDuration: 3_000
-    }, {
-      url: kws3,
-      alt: 'KWS developer tools',
-      displayDuration: 3_000
-    }, {
-      url: kws4,
-      alt: 'KWS mobile view',
-      displayDuration: 3_000
-    }],
+    images: [
+      {
+        url: kws1,
+        alt: 'KWS landing page',
+        displayDuration: 3_000,
+      },
+      {
+        url: kws0,
+        alt: 'KWS dashboard',
+        displayDuration: 3_000,
+      },
+      {
+        url: kws2,
+        alt: 'KWS parent flow',
+        displayDuration: 3_000,
+      },
+      {
+        url: kws3,
+        alt: 'KWS developer tools',
+        displayDuration: 3_000,
+      },
+      {
+        url: kws4,
+        alt: 'KWS mobile view',
+        displayDuration: 3_000,
+      },
+    ],
     externalLink: 'https://www.kidswebservices.com/',
-    technologies: ['Angular.js', 'Node.js', 'Postgresql', 'JavaScript', 'AWS', 'Docker']
+    technologies: ['Angular.js', 'Node.js', 'Postgresql', 'JavaScript', 'AWS', 'Docker'],
   },
-]
+];
 
 export function getProjectById(id) {
-  return projects.find(project => project.id === id)
+  return projects.find((project) => project.id === id);
 }

@@ -2,22 +2,22 @@
 const props = defineProps({
   images: {
     type: Array,
-    required: true
+    required: true,
   },
   currentIndex: {
     type: Number,
-    required: true
+    required: true,
   },
   thumbnails: {
     type: Boolean,
-    default: true
-  }
-})
+    default: true,
+  },
+});
 
-const emit = defineEmits(['previous', 'next', 'select'])
+const emit = defineEmits(['previous', 'next', 'select']);
 
 function handleSelect(index) {
-  emit('select', index)
+  emit('select', index);
 }
 </script>
 
