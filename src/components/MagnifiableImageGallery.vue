@@ -170,6 +170,9 @@ onUnmounted(() => {
   cursor: zoom-in;
   transition: transform 0.2s ease;
   object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image-container:hover {
