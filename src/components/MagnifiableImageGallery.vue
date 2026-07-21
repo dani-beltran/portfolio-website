@@ -38,9 +38,22 @@ function toggleFullscreen() {
   showFullscreen.value = !showFullscreen.value;
 }
 
-function handleEscKey(event) {
-  if (event.key === 'Escape') {
-    showFullscreen.value = false;
+function handlePressKey(event) {
+  switch (event.key) {
+    case 'Escape':
+      showFullscreen.value = false;
+      break;
+    case 'ArrowLeft':
+      showPreviousImage();
+      break;
+    case 'ArrowRight':
+      showNextImage();
+      break;
+    case 'Space':
+    case ' ':
+      event.preventDefault();
+      toggleFullscreen();
+      break;
   }
 }
 
@@ -110,12 +123,12 @@ async function handlePreviousClick() {
 }
 
 onMounted(() => {
-  window.addEventListener('keydown', handleEscKey);
+  window.addEventListener('keydown', handlePressKey);
   scheduleCycle();
 });
 
 onUnmounted(() => {
-  window.removeEventListener('keydown', handleEscKey);
+  window.removeEventListener('keydown', handlePressKey);
   if (cycleTimeoutId) {
     clearTimeout(cycleTimeoutId);
   }
