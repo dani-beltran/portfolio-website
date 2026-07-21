@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import profileImage from '../assets/profile.jpeg';
+import SocialLinks from './SocialLinks.vue';
 
 const imageVisible = ref(false);
 
@@ -27,6 +28,7 @@ function onImageLoad() {
         Specialized in building scalable, user-centric solutions from concept to deployment.
       </p>
     </div>
+    <SocialLinks />
   </section>
 </template>
 
@@ -57,6 +59,10 @@ function onImageLoad() {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--color-border);
+}
+
+.profile-content {
+  margin-bottom: 1rem;
 }
 
 .name {

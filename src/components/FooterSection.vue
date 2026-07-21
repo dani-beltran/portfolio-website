@@ -2,7 +2,7 @@
   <footer class="footer" role="contentinfo">
     <div class="footer-content">
       
-      <SocialLinks />
+      <SocialLinks darkMode />
       <!-- Separator Line -->
       <div class="separator"></div>
       
