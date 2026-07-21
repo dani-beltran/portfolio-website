@@ -214,7 +214,7 @@ onUnmounted(() => {
 
 .fullscreen-image {
   max-width: 95vw;
-  max-height: calc(100vh - 240px);
+  max-height: calc(100vh - 160px);
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
