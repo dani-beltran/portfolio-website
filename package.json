@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:dxp": "vite --mode dxp-preview",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "biome check",
