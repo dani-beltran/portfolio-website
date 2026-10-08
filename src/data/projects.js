@@ -18,6 +18,7 @@ import swDocs from '../assets/sw/sw-docs.png';
 import swNewsletter from '../assets/sw/sw-newsletter.png';
 import swSubs from '../assets/sw/sw-subs.png';
 import visualdxpAssistant from '../assets/visualdxp/ai-assistant.jpg';
+import visualdxpPicker from '../assets/visualdxp/element-picker.jpg';
 import visualdxpMarketing from '../assets/visualdxp/marketing-hero.png';
 import visualdxpPopover from '../assets/visualdxp/popover-configuration.jpg';
 import visualdxpEditor from '../assets/visualdxp/workflow-editor.jpg';
@@ -58,6 +59,10 @@ An AI assistant helps turn natural-language requests into workflow changes. Its 
       {
         url: visualdxpEditor,
         alt: 'VisualDXP welcome journey with connected trigger, condition, delay, popover, and cookie nodes',
+      },
+      {
+        url: visualdxpPicker,
+        alt: 'VisualDXP element picker highlighting selected text on the demo website',
       },
       {
         url: visualdxpPopover,
