@@ -18,7 +18,7 @@ import swDocs from '../assets/sw/sw-docs.png';
 import swNewsletter from '../assets/sw/sw-newsletter.png';
 import swSubs from '../assets/sw/sw-subs.png';
 import visualdxpAssistant from '../assets/visualdxp/ai-assistant.jpg';
-import visualdxpLoading from '../assets/visualdxp/loading-screen.jpg';
+import visualdxpMarketing from '../assets/visualdxp/marketing-hero.png';
 import visualdxpPopover from '../assets/visualdxp/popover-configuration.jpg';
 import visualdxpEditor from '../assets/visualdxp/workflow-editor.jpg';
 
@@ -52,8 +52,8 @@ An AI assistant helps turn natural-language requests into workflow changes. Its 
 **Controlled Application** Applies a successful batch as one undoable change and rejects pending edits if the canvas has changed while the AI was working. Failed checks or interrupted drafts leave edits unapplied. The harness edits workflow definitions; live execution remains a separate preview step.`,
     images: [
       {
-        url: visualdxpLoading,
-        alt: 'VisualDXP loading screen with the logo on a green background',
+        url: visualdxpMarketing,
+        alt: 'VisualDXP logo on a green background alongside a visual workflow graph',
       },
       {
         url: visualdxpEditor,
