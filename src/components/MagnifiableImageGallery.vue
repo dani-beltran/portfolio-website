@@ -175,14 +175,13 @@ onUnmounted(() => {
 <style scoped>
 .image-container {
   width: 100%;
-  height: 430px;
+  height: 480px;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--color-border);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   cursor: zoom-in;
   transition: transform 0.2s ease;
-  object-fit: contain;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,11 +192,11 @@ onUnmounted(() => {
 }
 
 .image-container img {
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   margin: auto;
   display: block;
-  max-height: 100%;
   max-width: 100%;
 }
 

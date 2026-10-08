@@ -1,4 +1,5 @@
 import deckuGif from '../assets/decku/deckudb-demo.gif';
+import deckuImage from '../assets/decku/screenshot-deckudb.png';
 import kws0 from '../assets/kws/kws0.webp';
 import kws1 from '../assets/kws/kws1.avif';
 import kws2 from '../assets/kws/kws2.webp';
@@ -6,17 +7,19 @@ import kws3 from '../assets/kws/kws3.webp';
 import kws4 from '../assets/kws/kws4.webp';
 import layerzGif from '../assets/lz/layerz-demo.gif';
 import layerzProductGif from '../assets/lz/layerz-product-demo.gif';
-import nodescriptGif from '../assets/ns/nodescript-demo.gif';
-import deckuImage from '../assets/decku/screenshot-deckudb.png';
 import layerzImage2 from '../assets/lz/screenshot-layerz-2.png';
+import nodescriptGif from '../assets/ns/nodescript-demo.gif';
 import nodescriptImage from '../assets/ns/screenshot-nodescript.jpg';
 import nodescriptImage2 from '../assets/ns/screenshot-nodescript-2.png';
-import swDemo from '../assets/sw/sw-demo.png';
 import swAd from '../assets/sw/sw-ad.png';
 import swDashboard from '../assets/sw/sw-dashboard.png';
+import swDemo from '../assets/sw/sw-demo.png';
 import swDocs from '../assets/sw/sw-docs.png';
 import swNewsletter from '../assets/sw/sw-newsletter.png';
 import swSubs from '../assets/sw/sw-subs.png';
+import visualdxpAssistant from '../assets/visualdxp/ai-assistant.jpg';
+import visualdxpPopover from '../assets/visualdxp/popover-configuration.jpg';
+import visualdxpEditor from '../assets/visualdxp/workflow-editor.jpg';
 
 export const ProjectType = {
   Work: 'Work',
@@ -25,6 +28,48 @@ export const ProjectType = {
 };
 
 export const projects = [
+  {
+    id: 'visualdxp',
+    name: 'VisualDXP',
+    type: ProjectType.Personal,
+    dateRange: 'Sep 2026 - Present',
+    shortDescription:
+      'A visual website experience builder with an AI editing harness, live previews, and standalone JavaScript export.',
+    description: `VisualDXP is a visual workflow editor for creating personalized website experiences. Connect triggers, conditions, delays, and actions to build onboarding journeys, contextual messages, content personalization, and experiments.
+
+The editor lets you pick elements on a target website, configure each step, and test journeys in an embedded preview. Reusable presets provide starting points, while standalone JavaScript export lets the finished experience run outside the editor.
+
+An AI assistant helps turn natural-language requests into workflow changes. Its AI harness coordinates draft editing, layout, validation, and a separate read-only AI review before applying a complete change to the canvas. When a tradeoff needs a decision, the assistant explains it and asks for clarification.`,
+    implementation: `I built VisualDXP as both a standalone application and an embeddable editor:
+
+**Visual Workflow Editor** Built with React 19, TypeScript, and React Flow, with configurable nodes, branching connections, annotations, presets, and undoable edits. The reusable library lets other React applications embed the builder.
+
+**Website Integration & Export** Added an iframe element picker, a preview bridge, and execution logs for testing website journeys. The export pipeline generates standalone JavaScript from the workflow definition.
+
+**AI Harness** Orchestrated tool-driven editing with LangGraph and provider integrations through the AI SDK. Changes are prepared in a draft, arranged on the canvas, validated against workflow rules, and assessed by a separate read-only reviewer. Review failures can trigger up to two repair attempts before the result is checked again.
+
+**Controlled Application** Applies a successful batch as one undoable change and rejects pending edits if the canvas has changed while the AI was working. Failed checks or interrupted drafts leave edits unapplied. The harness edits workflow definitions; live execution remains a separate preview step.`,
+    images: [
+      {
+        url: visualdxpEditor,
+        alt: 'VisualDXP welcome journey with connected trigger, condition, delay, popover, and cookie nodes',
+      },
+      {
+        url: visualdxpPopover,
+        alt: 'VisualDXP workflow canvas with the popover configuration panel open',
+      },
+      {
+        url: visualdxpAssistant,
+        alt: 'VisualDXP AI workflow assistant open beside the welcome journey canvas',
+      },
+    ],
+    externalLink: 'https://visual-dxp-t4g17.sevalla.app/',
+    implementationLink: {
+      url: 'https://visual-dxp-t4g17.sevalla.app/harness-explained.html',
+      label: 'Explore the AI harness in detail',
+    },
+    technologies: ['React', 'TypeScript', 'Next.js', 'React Flow', 'LangGraph', 'AI SDK'],
+  },
   {
     id: 'deckudb',
     name: 'DeckuDB',

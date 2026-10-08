@@ -7,8 +7,8 @@ import { ProjectType, projects } from '../data/projects';
 <template>
   <div class="home-view">
     <ProfileSection />
-    <ProjectsSection  title="Professional Work" description="A selection of professional projects I contributed to or led." :projects="projects.filter(project => project.type === ProjectType.Work)" />
     <ProjectsSection  title="Personal Projects" description="Some of my personal projects and experiments." :projects="projects.filter(project => project.type === ProjectType.Personal)" />
+    <ProjectsSection  title="Professional Work" description="A selection of professional projects I contributed to or led." :projects="projects.filter(project => project.type === ProjectType.Work)" />
   </div>
 </template>
 
