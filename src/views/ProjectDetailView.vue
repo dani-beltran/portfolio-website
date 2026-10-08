@@ -20,16 +20,16 @@ function formatImplementation(text) {
     .replace(/^- (.*?)$/gm, '<li>$1</li>')
     .replace(/(?:<li>.*?<\/li>\n?)+/g, '<ul>$&</ul>')
     .split('\n\n')
-    .map(p => {
-      if (p.includes('<ul>')) return p
-      if (p.includes('<strong>')) return `<p class="paragraph">${p}</p>`
-      return `<p class="paragraph">${p}</p>`
+    .map((p) => {
+      if (p.includes('<ul>')) return p;
+      if (p.includes('<strong>')) return `<p class="paragraph">${p}</p>`;
+      return `<p class="paragraph">${p}</p>`;
     })
-    .join('')
+    .join('');
 }
 
 function handlePressKey(event) {
-  if(event.key === 'Backspace') {
+  if (event.key === 'Backspace') {
     goBack();
   }
 }
@@ -77,6 +77,15 @@ onUnmounted(() => {
       <section class="project-section">
         <h2>Technical Implementation</h2>
         <div v-html="formatImplementation(project.implementation)" class="implementation-content"></div>
+        <a
+          v-if="project.implementationLink"
+          :href="project.implementationLink.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="implementation-link"
+        >
+          {{ project.implementationLink.label }} ↗
+        </a>
       </section>
 
       <a 
@@ -234,6 +243,17 @@ onUnmounted(() => {
   font-size: 1rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   margin-top: 2rem;
+}
+
+.implementation-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--color-accent);
+  text-underline-offset: 0.2em;
+}
+
+.implementation-link:hover {
+  text-decoration: underline;
 }
 
 .external-link:hover {
